@@ -1,0 +1,11 @@
+{
+  "consultaOnlineApp": {
+    "FormaDePag": {
+      "null": "",
+      "Dinheiro": "Dinheiro",
+      "Cartao": "Cartao",
+      "Pix": "Pix",
+      "Boleto": "Boleto"
+    }
+  }
+}

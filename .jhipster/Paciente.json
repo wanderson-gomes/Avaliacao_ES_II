@@ -1,0 +1,62 @@
+{
+  "name": "Paciente",
+  "fields": [
+    {
+      "fieldName": "idUsuario",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "nome",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "cpf",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "rg",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "dataNascimento",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "cidade",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "bairro",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "contato",
+      "fieldType": "Integer"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "planoDeSaude",
+      "otherEntityRelationshipName": "paciente",
+      "relationshipName": "planoDeSaude",
+      "otherEntityField": "idPlano"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "administrador",
+      "otherEntityRelationshipName": "paciente",
+      "relationshipName": "administrador"
+    }
+  ],
+  "entityTableName": "paciente",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210622194437"
+}

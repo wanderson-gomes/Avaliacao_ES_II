@@ -1,0 +1,84 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-plano-de-saude-heading"
+        data-cy="PlanoDeSaudeCreateUpdateHeading"
+        jhiTranslate="consultaOnlineApp.planoDeSaude.home.createOrEditLabel"
+      >
+        Create or edit a Plano De Saude
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="form-group" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-control-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="consultaOnlineApp.planoDeSaude.idPlano" for="field_idPlano">Id Plano</label>
+          <input type="number" class="form-control" name="idPlano" id="field_idPlano" data-cy="idPlano" formControlName="idPlano" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="consultaOnlineApp.planoDeSaude.nomePlano" for="field_nomePlano">Nome Plano</label>
+          <input type="text" class="form-control" name="nomePlano" id="field_nomePlano" data-cy="nomePlano" formControlName="nomePlano" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="consultaOnlineApp.planoDeSaude.ativo" for="field_ativo">Ativo</label>
+          <input type="checkbox" class="form-check" name="ativo" id="field_ativo" data-cy="ativo" formControlName="ativo" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="consultaOnlineApp.planoDeSaude.cnpj" for="field_cnpj">Cnpj</label>
+          <input type="number" class="form-control" name="cnpj" id="field_cnpj" data-cy="cnpj" formControlName="cnpj" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="consultaOnlineApp.planoDeSaude.formaDePag" for="field_formaDePag"
+            >Forma De Pag</label
+          >
+          <select class="form-control" name="formaDePag" formControlName="formaDePag" id="field_formaDePag" data-cy="formaDePag">
+            <option [ngValue]="null">{{ 'consultaOnlineApp.FormaDePag.null' | translate }}</option>
+            <option value="Dinheiro">{{ 'consultaOnlineApp.FormaDePag.Dinheiro' | translate }}</option>
+            <option value="Cartao">{{ 'consultaOnlineApp.FormaDePag.Cartao' | translate }}</option>
+            <option value="Pix">{{ 'consultaOnlineApp.FormaDePag.Pix' | translate }}</option>
+            <option value="Boleto">{{ 'consultaOnlineApp.FormaDePag.Boleto' | translate }}</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="consultaOnlineApp.planoDeSaude.paciente" for="field_paciente">Paciente</label>
+          <select class="form-control" id="field_paciente" data-cy="paciente" name="paciente" formControlName="paciente">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="pacienteOption.id === editForm.get('paciente')!.value?.id ? editForm.get('paciente')!.value : pacienteOption"
+              *ngFor="let pacienteOption of pacientesSharedCollection; trackBy: trackPacienteById"
+            >
+              {{ pacienteOption.id }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

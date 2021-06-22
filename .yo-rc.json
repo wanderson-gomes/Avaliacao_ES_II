@@ -42,7 +42,9 @@
     "jwtSecretKey": "N2ExMjgxMzI5OTJlMWEzMWE1MTMwZWJjZGNmNzU5Njg0MGRkNzA0NTcyOGEyMTBhMTViODUyYjUyNGE1YWQwMGJmOTgxYjA3NTVkMDc1MTYxNzJjM2YyOTdjN2U0MWIwYzhkOTY0MTdkNzc5Nzg0OTc4NmU3YjA0YjViMGVjOTY=",
     "clientTheme": "none",
     "clientThemeVariant": "",
-    "reactive": false
+    "reactive": false,
+    "entities": ["Paciente", "Administrador", "PlanoDeSaude", "Consulta", "Medico", "Relatorio", "Retorno"],
+    "lastLiquibaseTimestamp": 1624391083000
   },
   "git-provider": "GitHub",
   "git-company": "wanderson-gomes",

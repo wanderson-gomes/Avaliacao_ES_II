@@ -1,0 +1,60 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="administrador">
+      <h2 data-cy="administradorDetailsHeading"><span jhiTranslate="consultaOnlineApp.administrador.detail.title">Administrador</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ administrador.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="consultaOnlineApp.administrador.idAdministrador">Id Administrador</span></dt>
+        <dd>
+          <span>{{ administrador.idAdministrador }}</span>
+        </dd>
+        <dt><span jhiTranslate="consultaOnlineApp.administrador.nome">Nome</span></dt>
+        <dd>
+          <span>{{ administrador.nome }}</span>
+        </dd>
+        <dt><span jhiTranslate="consultaOnlineApp.administrador.cpf">Cpf</span></dt>
+        <dd>
+          <span>{{ administrador.cpf }}</span>
+        </dd>
+        <dt><span jhiTranslate="consultaOnlineApp.administrador.rg">Rg</span></dt>
+        <dd>
+          <span>{{ administrador.rg }}</span>
+        </dd>
+        <dt><span jhiTranslate="consultaOnlineApp.administrador.dataNascimento">Data Nascimento</span></dt>
+        <dd>
+          <span>{{ administrador.dataNascimento | formatMediumDate }}</span>
+        </dd>
+        <dt><span jhiTranslate="consultaOnlineApp.administrador.cidade">Cidade</span></dt>
+        <dd>
+          <span>{{ administrador.cidade }}</span>
+        </dd>
+        <dt><span jhiTranslate="consultaOnlineApp.administrador.bairro">Bairro</span></dt>
+        <dd>
+          <span>{{ administrador.bairro }}</span>
+        </dd>
+        <dt><span jhiTranslate="consultaOnlineApp.administrador.contato">Contato</span></dt>
+        <dd>
+          <span>{{ administrador.contato }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/administrador', administrador.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

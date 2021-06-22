@@ -1,0 +1,57 @@
+{
+  "name": "Medico",
+  "fields": [
+    {
+      "fieldName": "idMedico",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "nome",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "crm",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "cpf",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "rg",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "especialidade",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "contato",
+      "fieldType": "Integer"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "relatorio",
+      "otherEntityRelationshipName": "medico",
+      "relationshipName": "relatorio"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "administrador",
+      "otherEntityRelationshipName": "medico",
+      "relationshipName": "administrador"
+    }
+  ],
+  "entityTableName": "medico",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210622194441"
+}

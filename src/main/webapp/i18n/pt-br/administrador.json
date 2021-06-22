@@ -1,0 +1,33 @@
+{
+  "consultaOnlineApp": {
+    "administrador": {
+      "home": {
+        "title": "Administradors",
+        "refreshListLabel": "Atualizar lista",
+        "createLabel": "Criar novo Administrador",
+        "createOrEditLabel": "Criar ou editar Administrador",
+        "notFound": "Nenhum Administrador encontrado"
+      },
+      "created": "Um novo Administrador foi criado com o identificador {{ param }}",
+      "updated": "Um Administrador foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Administrador foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Administrador {{ id }}?"
+      },
+      "detail": {
+        "title": "Administrador"
+      },
+      "id": "ID",
+      "idAdministrador": "Id Administrador",
+      "nome": "Nome",
+      "cpf": "Cpf",
+      "rg": "Rg",
+      "dataNascimento": "Data Nascimento",
+      "cidade": "Cidade",
+      "bairro": "Bairro",
+      "contato": "Contato",
+      "paciente": "Paciente",
+      "medico": "Medico"
+    }
+  }
+}

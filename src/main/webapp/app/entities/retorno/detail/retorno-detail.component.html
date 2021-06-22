@@ -1,0 +1,46 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="retorno">
+      <h2 data-cy="retornoDetailsHeading"><span jhiTranslate="consultaOnlineApp.retorno.detail.title">Retorno</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ retorno.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="consultaOnlineApp.retorno.idMedico">Id Medico</span></dt>
+        <dd>
+          <span>{{ retorno.idMedico }}</span>
+        </dd>
+        <dt><span jhiTranslate="consultaOnlineApp.retorno.idPaciente">Id Paciente</span></dt>
+        <dd>
+          <span>{{ retorno.idPaciente }}</span>
+        </dd>
+        <dt><span jhiTranslate="consultaOnlineApp.retorno.dataRetorno">Data Retorno</span></dt>
+        <dd>
+          <span>{{ retorno.dataRetorno | formatMediumDate }}</span>
+        </dd>
+        <dt><span jhiTranslate="consultaOnlineApp.retorno.medico">Medico</span></dt>
+        <dd>
+          <div *ngIf="retorno.medico">
+            <a [routerLink]="['/medico', retorno.medico?.id, 'view']">{{ retorno.medico?.idMedico }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/retorno', retorno.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

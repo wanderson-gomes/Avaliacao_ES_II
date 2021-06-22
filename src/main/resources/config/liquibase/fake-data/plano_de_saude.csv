@@ -1,0 +1,11 @@
+id;id_plano;nome_plano;ativo;cnpj;forma_de_pag
+1;20041;generating;true;36194;Pix
+2;78827;invoice JSON;false;31477;Boleto
+3;30120;Internal cross-media;true;74194;Pix
+4;49293;Fantástico connecting;false;12173;Pix
+5;34124;capacity Japão;false;70526;Dinheiro
+6;86076;Market;false;74349;Cartao
+7;88334;Borders generation;true;56528;Pix
+8;53529;Pernambuco;false;48804;Cartao
+9;28948;bluetooth compress;false;83219;Cartao
+10;47335;Plástico reboot;false;19145;Boleto

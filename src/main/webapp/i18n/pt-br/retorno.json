@@ -1,0 +1,27 @@
+{
+  "consultaOnlineApp": {
+    "retorno": {
+      "home": {
+        "title": "Retornos",
+        "refreshListLabel": "Atualizar lista",
+        "createLabel": "Criar novo Retorno",
+        "createOrEditLabel": "Criar ou editar Retorno",
+        "notFound": "Nenhum Retorno encontrado"
+      },
+      "created": "Um novo Retorno foi criado com o identificador {{ param }}",
+      "updated": "Um Retorno foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Retorno foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Retorno {{ id }}?"
+      },
+      "detail": {
+        "title": "Retorno"
+      },
+      "id": "ID",
+      "idMedico": "Id Medico",
+      "idPaciente": "Id Paciente",
+      "dataRetorno": "Data Retorno",
+      "medico": "Medico"
+    }
+  }
+}

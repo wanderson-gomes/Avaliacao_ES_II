@@ -1,0 +1,27 @@
+{
+  "consultaOnlineApp": {
+    "relatorio": {
+      "home": {
+        "title": "Relatorios",
+        "refreshListLabel": "Atualizar lista",
+        "createLabel": "Criar novo Relatorio",
+        "createOrEditLabel": "Criar ou editar Relatorio",
+        "notFound": "Nenhum Relatorio encontrado"
+      },
+      "created": "Um novo Relatorio foi criado com o identificador {{ param }}",
+      "updated": "Um Relatorio foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Relatorio foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Relatorio {{ id }}?"
+      },
+      "detail": {
+        "title": "Relatorio"
+      },
+      "id": "ID",
+      "idMedico": "Id Medico",
+      "descricao": "Descricao",
+      "diagnostico": "Diagnostico",
+      "medico": "Medico"
+    }
+  }
+}

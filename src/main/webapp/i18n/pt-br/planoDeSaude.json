@@ -1,0 +1,29 @@
+{
+  "consultaOnlineApp": {
+    "planoDeSaude": {
+      "home": {
+        "title": "Plano De Saudes",
+        "refreshListLabel": "Atualizar lista",
+        "createLabel": "Criar novo Plano De Saude",
+        "createOrEditLabel": "Criar ou editar Plano De Saude",
+        "notFound": "Nenhum Plano De Saude encontrado"
+      },
+      "created": "Um novo Plano De Saude foi criado com o identificador {{ param }}",
+      "updated": "Um Plano De Saude foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Plano De Saude foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Plano De Saude {{ id }}?"
+      },
+      "detail": {
+        "title": "Plano De Saude"
+      },
+      "id": "ID",
+      "idPlano": "Id Plano",
+      "nomePlano": "Nome Plano",
+      "ativo": "Ativo",
+      "cnpj": "Cnpj",
+      "formaDePag": "Forma De Pag",
+      "paciente": "Paciente"
+    }
+  }
+}
