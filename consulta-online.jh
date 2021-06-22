@@ -1,0 +1,74 @@
+entity Paciente {
+	idUsuario Integer 
+    nome String 
+    cpf Integer
+    rg Integer
+    dataNascimento LocalDate
+    cidade String
+    bairro String
+    contato Integer
+}
+
+entity Administrador {
+	idAdministrador Integer
+	nome String
+    cpf Integer
+    rg Integer
+    dataNascimento LocalDate
+    cidade String
+    bairro String
+    contato Integer
+}
+
+entity PlanoDeSaude {
+	idPlano Integer
+	nomePlano String
+	ativo Boolean
+	cnpj Integer
+    formaDePag FormaDePag
+}
+
+enum FormaDePag {
+	Dinheiro, Cartao, Pix, Boleto
+} 
+
+entity Consulta {
+	idPaciente Integer
+    dataConsulta LocalDate
+    horario String
+}
+
+entity Medico {
+	idMedico Integer
+    nome String
+    crm Integer
+    cpf Integer
+    rg Integer
+    especialidade String
+    contato Integer
+}
+
+entity Relatorio {
+	idMedico Integer
+    descricao String
+	diagnostico String
+}
+
+entity Retorno {
+	idMedico Integer
+    idPaciente Integer
+    dataRetorno LocalDate
+}
+
+
+relationship OneToOne {
+    Consulta{Paciente(idPaciente)} to Paciente
+    Retorno{Medico(idMedico)} to Medico
+}
+
+relationship OneToMany {
+	Administrador{Paciente(idPaciente)} to Paciente
+    Administrador{Medico(idMedico)} to Medico
+    Paciente{PlanoDeSaude(idPlano)} to PlanoDeSaude
+    Medico{Relatorio} to Relatorio
+}

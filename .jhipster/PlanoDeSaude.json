@@ -1,0 +1,44 @@
+{
+  "name": "PlanoDeSaude",
+  "fields": [
+    {
+      "fieldName": "idPlano",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "nomePlano",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "ativo",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "cnpj",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "formaDePag",
+      "fieldType": "FormaDePag",
+      "fieldValues": "Dinheiro,Cartao,Pix,Boleto"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "paciente",
+      "otherEntityRelationshipName": "planoDeSaude",
+      "relationshipName": "paciente"
+    }
+  ],
+  "entityTableName": "plano_de_saude",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210622194439"
+}

@@ -1,0 +1,66 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="paciente">
+      <h2 data-cy="pacienteDetailsHeading"><span jhiTranslate="consultaOnlineApp.paciente.detail.title">Paciente</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ paciente.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="consultaOnlineApp.paciente.idUsuario">Id Usuario</span></dt>
+        <dd>
+          <span>{{ paciente.idUsuario }}</span>
+        </dd>
+        <dt><span jhiTranslate="consultaOnlineApp.paciente.nome">Nome</span></dt>
+        <dd>
+          <span>{{ paciente.nome }}</span>
+        </dd>
+        <dt><span jhiTranslate="consultaOnlineApp.paciente.cpf">Cpf</span></dt>
+        <dd>
+          <span>{{ paciente.cpf }}</span>
+        </dd>
+        <dt><span jhiTranslate="consultaOnlineApp.paciente.rg">Rg</span></dt>
+        <dd>
+          <span>{{ paciente.rg }}</span>
+        </dd>
+        <dt><span jhiTranslate="consultaOnlineApp.paciente.dataNascimento">Data Nascimento</span></dt>
+        <dd>
+          <span>{{ paciente.dataNascimento | formatMediumDate }}</span>
+        </dd>
+        <dt><span jhiTranslate="consultaOnlineApp.paciente.cidade">Cidade</span></dt>
+        <dd>
+          <span>{{ paciente.cidade }}</span>
+        </dd>
+        <dt><span jhiTranslate="consultaOnlineApp.paciente.bairro">Bairro</span></dt>
+        <dd>
+          <span>{{ paciente.bairro }}</span>
+        </dd>
+        <dt><span jhiTranslate="consultaOnlineApp.paciente.contato">Contato</span></dt>
+        <dd>
+          <span>{{ paciente.contato }}</span>
+        </dd>
+        <dt><span jhiTranslate="consultaOnlineApp.paciente.administrador">Administrador</span></dt>
+        <dd>
+          <div *ngIf="paciente.administrador">
+            <a [routerLink]="['/administrador', paciente.administrador?.id, 'view']">{{ paciente.administrador?.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/paciente', paciente.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

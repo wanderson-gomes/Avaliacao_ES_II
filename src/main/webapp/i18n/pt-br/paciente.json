@@ -1,0 +1,33 @@
+{
+  "consultaOnlineApp": {
+    "paciente": {
+      "home": {
+        "title": "Pacientes",
+        "refreshListLabel": "Atualizar lista",
+        "createLabel": "Criar novo Paciente",
+        "createOrEditLabel": "Criar ou editar Paciente",
+        "notFound": "Nenhum Paciente encontrado"
+      },
+      "created": "Um novo Paciente foi criado com o identificador {{ param }}",
+      "updated": "Um Paciente foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Paciente foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Paciente {{ id }}?"
+      },
+      "detail": {
+        "title": "Paciente"
+      },
+      "id": "ID",
+      "idUsuario": "Id Usuario",
+      "nome": "Nome",
+      "cpf": "Cpf",
+      "rg": "Rg",
+      "dataNascimento": "Data Nascimento",
+      "cidade": "Cidade",
+      "bairro": "Bairro",
+      "contato": "Contato",
+      "planoDeSaude": "Plano De Saude",
+      "administrador": "Administrador"
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "consultaOnlineApp": {
+    "retorno": {
+      "home": {
+        "title": "Retornos",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Retorno",
+        "createOrEditLabel": "Create or edit a Retorno",
+        "notFound": "No Retornos found"
+      },
+      "created": "A new Retorno is created with identifier {{ param }}",
+      "updated": "A Retorno is updated with identifier {{ param }}",
+      "deleted": "A Retorno is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Retorno {{ id }}?"
+      },
+      "detail": {
+        "title": "Retorno"
+      },
+      "id": "ID",
+      "idMedico": "Id Medico",
+      "idPaciente": "Id Paciente",
+      "dataRetorno": "Data Retorno",
+      "medico": "Medico"
+    }
+  }
+}

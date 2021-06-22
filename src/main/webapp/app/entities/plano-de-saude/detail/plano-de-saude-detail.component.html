@@ -1,0 +1,54 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="planoDeSaude">
+      <h2 data-cy="planoDeSaudeDetailsHeading"><span jhiTranslate="consultaOnlineApp.planoDeSaude.detail.title">Plano De Saude</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ planoDeSaude.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="consultaOnlineApp.planoDeSaude.idPlano">Id Plano</span></dt>
+        <dd>
+          <span>{{ planoDeSaude.idPlano }}</span>
+        </dd>
+        <dt><span jhiTranslate="consultaOnlineApp.planoDeSaude.nomePlano">Nome Plano</span></dt>
+        <dd>
+          <span>{{ planoDeSaude.nomePlano }}</span>
+        </dd>
+        <dt><span jhiTranslate="consultaOnlineApp.planoDeSaude.ativo">Ativo</span></dt>
+        <dd>
+          <span>{{ planoDeSaude.ativo }}</span>
+        </dd>
+        <dt><span jhiTranslate="consultaOnlineApp.planoDeSaude.cnpj">Cnpj</span></dt>
+        <dd>
+          <span>{{ planoDeSaude.cnpj }}</span>
+        </dd>
+        <dt><span jhiTranslate="consultaOnlineApp.planoDeSaude.formaDePag">Forma De Pag</span></dt>
+        <dd>
+          <span jhiTranslate="{{ 'consultaOnlineApp.FormaDePag.' + planoDeSaude.formaDePag }}">{{ planoDeSaude.formaDePag }}</span>
+        </dd>
+        <dt><span jhiTranslate="consultaOnlineApp.planoDeSaude.paciente">Paciente</span></dt>
+        <dd>
+          <div *ngIf="planoDeSaude.paciente">
+            <a [routerLink]="['/paciente', planoDeSaude.paciente?.id, 'view']">{{ planoDeSaude.paciente?.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/plano-de-saude', planoDeSaude.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

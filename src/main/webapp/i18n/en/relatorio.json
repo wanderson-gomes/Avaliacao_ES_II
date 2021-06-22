@@ -1,0 +1,27 @@
+{
+  "consultaOnlineApp": {
+    "relatorio": {
+      "home": {
+        "title": "Relatorios",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Relatorio",
+        "createOrEditLabel": "Create or edit a Relatorio",
+        "notFound": "No Relatorios found"
+      },
+      "created": "A new Relatorio is created with identifier {{ param }}",
+      "updated": "A Relatorio is updated with identifier {{ param }}",
+      "deleted": "A Relatorio is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Relatorio {{ id }}?"
+      },
+      "detail": {
+        "title": "Relatorio"
+      },
+      "id": "ID",
+      "idMedico": "Id Medico",
+      "descricao": "Descricao",
+      "diagnostico": "Diagnostico",
+      "medico": "Medico"
+    }
+  }
+}

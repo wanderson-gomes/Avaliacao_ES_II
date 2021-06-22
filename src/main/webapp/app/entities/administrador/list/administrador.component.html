@@ -1,0 +1,92 @@
+<div>
+  <h2 id="page-heading" data-cy="AdministradorHeading">
+    <span jhiTranslate="consultaOnlineApp.administrador.home.title">Administradors</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info mr-2" (click)="loadAll()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="consultaOnlineApp.administrador.home.refreshListLabel">Refresh List</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-administrador"
+        [routerLink]="['/administrador/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="consultaOnlineApp.administrador.home.createLabel"> Create a new Administrador </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="administradors?.length === 0">
+    <span jhiTranslate="consultaOnlineApp.administrador.home.notFound">No administradors found</span>
+  </div>
+
+  <div class="table-responsive" id="entities" *ngIf="administradors && administradors.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr>
+          <th scope="col"><span jhiTranslate="global.field.id">ID</span></th>
+          <th scope="col"><span jhiTranslate="consultaOnlineApp.administrador.idAdministrador">Id Administrador</span></th>
+          <th scope="col"><span jhiTranslate="consultaOnlineApp.administrador.nome">Nome</span></th>
+          <th scope="col"><span jhiTranslate="consultaOnlineApp.administrador.cpf">Cpf</span></th>
+          <th scope="col"><span jhiTranslate="consultaOnlineApp.administrador.rg">Rg</span></th>
+          <th scope="col"><span jhiTranslate="consultaOnlineApp.administrador.dataNascimento">Data Nascimento</span></th>
+          <th scope="col"><span jhiTranslate="consultaOnlineApp.administrador.cidade">Cidade</span></th>
+          <th scope="col"><span jhiTranslate="consultaOnlineApp.administrador.bairro">Bairro</span></th>
+          <th scope="col"><span jhiTranslate="consultaOnlineApp.administrador.contato">Contato</span></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let administrador of administradors; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/administrador', administrador.id, 'view']">{{ administrador.id }}</a>
+          </td>
+          <td>{{ administrador.idAdministrador }}</td>
+          <td>{{ administrador.nome }}</td>
+          <td>{{ administrador.cpf }}</td>
+          <td>{{ administrador.rg }}</td>
+          <td>{{ administrador.dataNascimento | formatMediumDate }}</td>
+          <td>{{ administrador.cidade }}</td>
+          <td>{{ administrador.bairro }}</td>
+          <td>{{ administrador.contato }}</td>
+          <td class="text-right">
+            <div class="btn-group">
+              <button
+                type="submit"
+                [routerLink]="['/administrador', administrador.id, 'view']"
+                class="btn btn-info btn-sm"
+                data-cy="entityDetailsButton"
+              >
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </button>
+
+              <button
+                type="submit"
+                [routerLink]="['/administrador', administrador.id, 'edit']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityEditButton"
+              >
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(administrador)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

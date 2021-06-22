@@ -1,0 +1,117 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="jhi-paciente-heading" data-cy="PacienteCreateUpdateHeading" jhiTranslate="consultaOnlineApp.paciente.home.createOrEditLabel">
+        Create or edit a Paciente
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="form-group" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-control-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="consultaOnlineApp.paciente.idUsuario" for="field_idUsuario">Id Usuario</label>
+          <input type="number" class="form-control" name="idUsuario" id="field_idUsuario" data-cy="idUsuario" formControlName="idUsuario" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="consultaOnlineApp.paciente.nome" for="field_nome">Nome</label>
+          <input type="text" class="form-control" name="nome" id="field_nome" data-cy="nome" formControlName="nome" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="consultaOnlineApp.paciente.cpf" for="field_cpf">Cpf</label>
+          <input type="number" class="form-control" name="cpf" id="field_cpf" data-cy="cpf" formControlName="cpf" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="consultaOnlineApp.paciente.rg" for="field_rg">Rg</label>
+          <input type="number" class="form-control" name="rg" id="field_rg" data-cy="rg" formControlName="rg" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="consultaOnlineApp.paciente.dataNascimento" for="field_dataNascimento"
+            >Data Nascimento</label
+          >
+          <div class="input-group">
+            <input
+              id="field_dataNascimento"
+              data-cy="dataNascimento"
+              type="text"
+              class="form-control"
+              name="dataNascimento"
+              ngbDatepicker
+              #dataNascimentoDp="ngbDatepicker"
+              formControlName="dataNascimento"
+            />
+            <span class="input-group-append">
+              <button type="button" class="btn btn-secondary" (click)="dataNascimentoDp.toggle()">
+                <fa-icon icon="calendar-alt"></fa-icon>
+              </button>
+            </span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="consultaOnlineApp.paciente.cidade" for="field_cidade">Cidade</label>
+          <input type="text" class="form-control" name="cidade" id="field_cidade" data-cy="cidade" formControlName="cidade" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="consultaOnlineApp.paciente.bairro" for="field_bairro">Bairro</label>
+          <input type="text" class="form-control" name="bairro" id="field_bairro" data-cy="bairro" formControlName="bairro" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="consultaOnlineApp.paciente.contato" for="field_contato">Contato</label>
+          <input type="number" class="form-control" name="contato" id="field_contato" data-cy="contato" formControlName="contato" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="consultaOnlineApp.paciente.administrador" for="field_administrador"
+            >Administrador</label
+          >
+          <select
+            class="form-control"
+            id="field_administrador"
+            data-cy="administrador"
+            name="administrador"
+            formControlName="administrador"
+          >
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="
+                administradorOption.id === editForm.get('administrador')!.value?.id
+                  ? editForm.get('administrador')!.value
+                  : administradorOption
+              "
+              *ngFor="let administradorOption of administradorsSharedCollection; trackBy: trackAdministradorById"
+            >
+              {{ administradorOption.id }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,35 @@
+{
+  "name": "Relatorio",
+  "fields": [
+    {
+      "fieldName": "idMedico",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "descricao",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "diagnostico",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "medico",
+      "otherEntityRelationshipName": "relatorio",
+      "relationshipName": "medico"
+    }
+  ],
+  "entityTableName": "relatorio",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210622194442"
+}
